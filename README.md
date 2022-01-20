@@ -12,4 +12,47 @@ During the good old days of the Web float and table were heavily used.
 
 <cite>[MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) <cite>
 
-**Flex container** - 
+**Flex container** - A parent element that establishes a flex container by defining CSS ```display: flex; ``` attribute.
+
+**Flex items** - Elements that are children of a flex container.
+
+Let's look at very basic example:
+
+```html 
+<div class='parent'>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
+</div>
+```
+```css
+.parent {
+  display: flex;
+  flex-direction: column;
+}
+
+.child {
+  height: 30px;
+  margin: 10px 0;
+  width: 100%;
+  border: 1px solid black;
+}
+```
+In the example above div element with the name parent defines the flex container and contains 5 children div elements.
+
+Another important concept of CSS flex model is axes which defines the alignment of children in the flex container whether vertical or horizontal. When working with flexbox you need to think in terms of two axes — the main axis and the cross axis. The main axis is defined by the flex-direction property, and the cross axis runs perpendicular to it. Everything we do with flexbox refers back to these axes, so it is worth understanding how they work from the outset. Probably you are gonna need only to define main axis not the cross one.
+
+The main axis is defined by ```flex-direction```, which has four possible values:
+
+- row
+- row-reverse
+- column
+- column-reverse
+
+![Row](images/axis1.png)
+
+Choose ```column``` or ```column-reverse``` and your main axis will run from the top of the page to the bottom — in the block direction.
+
+![Column](images/axis2.png)
