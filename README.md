@@ -203,9 +203,6 @@ In order to override this we need to use ```order``` property for each child ele
 .child:nth-of-type(2) {
   order: 1;
 }
-.child:nth-of-type(3) {
-  order: 1;
-}
 ```
 And:
 ![Ordering](images/order2.png)
