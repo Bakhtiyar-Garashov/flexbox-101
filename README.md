@@ -1,9 +1,5 @@
 ## A guide contains everything you know about CSS flexbox
 
-### Table of Contents
-
-
-### 1. Introduction
 
 >The Flexible Box Module, usually referred to as flexbox, was designed as a one-dimensional layout model, and as a method that could offer space distribution between items in an interface and powerful alignment capabilities. This article gives an outline of the main features of flexbox, which we will be exploring in more detail in the rest of these guides.
 
@@ -59,7 +55,6 @@ Choose ```column``` or ```column-reverse``` and your main axis will run from the
 ![Column](images/axis2.png)
 
 
-### 2. Alignment
 
 In order to align items in the flex container we need to define the alignment in multiple ways. Let's look at some possible options with hands-on examples
 
@@ -126,3 +121,91 @@ Let's fix the problem and try to align the items at the center of the container 
 Perfect!
 
 ![Align-items](images/align_items2.png)
+
+Lastly, let's try to align one specific child of flex container by using the ```align-self``` property. Before this, we need to add selector for specific child.
+
+```css
+.child:nth-of-type(3) {
+  align-self: center;
+}
+```
+The code above uses CSS so-called pseudo-class to select the third child of flex container and applies ```align-self``` for vertical axis. And the result is:
+
+![Align-self](images/align_self1.png)
+
+For the example parent container if we add many child elements where if overflows the container, another useful property is ```flex-wrap``` comes in.
+
+Let's first see the problem and then solution:
+
+Here I have added many more children to the parent container.
+
+```html
+
+<div class='parent'>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
+    <div class='child'></div>
+</div>
+```
+
+![Wrap](images/wrap1.png)
+
+We can see that the children shrink to fit the container and the result is ugly. 
+
+After adding 
+
+```css
+.parent {
+  ...
+  flex-wrap: wrap;
+}
+```
+we get quite nice result!
+
+![Wrap](images/wrap2.png)
+
+Another nice feature of CSS flex is explicit ordering the child elements. For the example below
+
+```html
+<div class='parent'>
+    <div class='child'># 1</div>
+    <div class='child'># 2</div>
+    <div class='child'># 3</div>
+</div>
+``` 
+the default ordering will be #1, #2, #3 unsurprisingly.
+
+![Ordering](images/order1.png)
+
+In order to override this we need to use ```order``` property for each child element explicitly.
+
+```css
+.child:nth-of-type(1) {
+  order: 3;
+}
+.child:nth-of-type(2) {
+  order: 1;
+}
+.child:nth-of-type(3) {
+  order: 1;
+}
+```
+And:
+![Ordering](images/order2.png)
