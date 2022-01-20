@@ -9,7 +9,7 @@ During the good old days of the Web float and table were heavily used.
 
 <cite>[MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) <cite>
 
-**Flex container** - A parent element that establishes a flex container by defining CSS ```display: flex; ``` attribute.
+**Flex container** - A parent element that establishes a flex container by defining CSS ```display: flex;``` attribute.
 
 **Flex items** - Elements that are children of a flex container.
 
@@ -206,3 +206,5 @@ In order to override this we need to use ```order``` property for each child ele
 ```
 And:
 ![Ordering](images/order2.png)
+    
+   More will come soon...
