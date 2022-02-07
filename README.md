@@ -208,4 +208,3 @@ In order to override this we need to use ```order``` property for each child ele
 And:
 ![Ordering](images/order2.png)
     
-   More will come soon...
